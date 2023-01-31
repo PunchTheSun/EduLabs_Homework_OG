@@ -1,0 +1,100 @@
+# D6 - files exercise
+# import json
+# import csv
+import os
+import pprint
+
+
+# Ex1
+
+
+# def read_specified(file_path: str, start_line: int, end_line: int) -> str:
+#     if not os.path.exists(file_path):
+#         return ""
+#     with open(file_path, 'r') as f:
+#         for line_counter, line in enumerate(f):
+#             pass
+#     if line_counter < start_line or line_counter < end_line or start_line > end_line:
+#         return ""
+#     ret_text = ""
+#     with open(file_path, 'r') as f:
+#         for line in range(start_line, end_line+1):
+#             ret_text += f"{f.readline()}"
+#     return ret_text
+
+
+# Ex2
+
+
+# def handle_csv(file_path: str) -> tuple:
+#     num_of_rows = 0
+#     with open(file_path, 'r') as f:
+#         my_file = csv.DictReader(f)
+#         col_names = my_file.fieldnames
+#         num_of_col = len(col_names)
+#         for row in my_file:
+#             num_of_rows += 1
+#     return col_names, num_of_rows, num_of_col
+
+# Ex3
+
+
+# def csv2json(csv_filepath: str, json_filepath: str):
+#     with open(csv_filepath, 'r') as f:
+#         my_csv = csv.DictReader(f)
+#         csv_list = list()
+#         for row in my_csv:
+#             csv_list.append(row)
+#     with open(json_filepath, 'a') as jf:
+#         json.dump(csv_list, jf)
+
+
+# Ex4
+
+
+# def json2csv(json_filepath: str, csv_filepath: str):
+#     with open(json_filepath, 'r') as f:
+#         my_json = json.load(f)
+#     headers = my_json[0]
+#     with open(csv_filepath, 'w') as f:
+#         my_csv = csv.DictWriter(f, fieldnames=headers)
+#         my_csv.writeheader()
+#         my_csv.writerows(my_json)
+
+
+# Ex5
+
+
+# def dir2dict(current_path, structure_dict):
+#     object_name = os.path.basename(current_path)
+#     if os.path.isdir(current_path):
+#         if object_name not in structure_dict['dirs']:
+#             structure_dict['dirs'][object_name] = {'dirs': {}, 'files': []}
+#         for iterating_dir in os.listdir(current_path):
+#             dir2dict(os.path.join(current_path, iterating_dir), structure_dict['dirs'][object_name])
+#     else:
+#         structure_dict['files'].append(object_name)
+#     return structure_dict
+
+
+# if __name__ == "__main__":
+    # For Ex1 - 4:
+    # csv_p = "username2.csv"
+    # json_p = "username2.json"
+
+    ## Ex1
+    # # csv2json(csv_p, json_p)
+
+    ## Ex2
+    # # print(read_specified(csv_p, 0, 0))
+
+    ## Ex3
+    # # print(handle_csv(csv_p))
+
+    ## Ex4
+    # # json2csv(json_p, csv_p)
+
+    ## Ex5
+    # d = {'dirs': {}, 'files': []}
+    # mydict = dir2dict('main_folder', d)
+    # pprint.pprint(mydict)
